@@ -1,36 +1,37 @@
 
 MLDS Online Course
+==================
 http://speech.ee.ntu.edu.tw/~tlkagk/courses_MLDS17.html 
 
-#Basic Structures for Deep Learning Models
-LSTM/GRU
-Target Delay: Only for unidirectional RNN 
-LSTM > RNN > feedforward
-Bi-direction > uni-direction
-Training LSTM is faster than RNN
-LSTM 比較不會有gradient vanish的問題
-Forget gate is critical for performance
-Output gate activation function is critical
-Stack RNN: push/pop/nothing
-Convolution Layer: Filter/ Stride
-Pooling Layer: min/max/L2
+# Basic Structures for Deep Learning Models
+> LSTM/GRU
+> Target Delay: Only for unidirectional RNN 
+> LSTM > RNN > feedforward
+> Bi-direction > uni-direction
+> Training LSTM is faster than RNN
+> LSTM 比較不會有gradient vanish的問題
+> Forget gate is critical for performance
+> Output gate activation function is critical
+> Stack RNN: push/pop/nothing
+> Convolution Layer: Filter/ Stride
+> Pooling Layer: min/max/L2
 
-#Computational Graph and Back-propagation
-#Language Modeling: 估計一個word sequence的機率
-N-gram LM: P(w1,w2,…) = P(W1|START)*P(W2|W2)*…
-Challenge of N-gram: large model, not sufficient data
-NN LM: 相較於N-gram，減少參數
+# Computational Graph and Back-propagation
+# Language Modeling: 估計一個word sequence的機率
+> N-gram LM: P(w1,w2,…) = P(W1|START)*P(W2|W2)*…
+> Challenge of N-gram: large model, not sufficient data
+> NN LM: 相較於N-gram，減少參數
 
-#Special Deep Learning Structure
-Spatial Transformer: 
+# Special Deep Learning Structure
+## Spatial Transformer: 
 1. CNN is not invariant to scaling and rotation
 2. 訓練一個能產生6個參數的NN，來增加辨識度
-Highway Network & Grid LSTM
+## Highway Network & Grid LSTM
 1. Highway Network 就是把RNN竪直 (Residual Network)
 2. Grid LSTM Memory for both time and depth
-Recursive Network: EX: sentiment analysis
+## Recursive Network: EX: sentiment analysis
 
-#Conditional Generation by RNN & Attention 
+# Conditional Generation by RNN & Attention 
 1. Attention: Dynamic Conditional Generation
 利用機器學到的weight來針對部分input作加權
 2. Memory Network:  Hopping 
@@ -41,7 +42,7 @@ Good Attention: each input component has approximately the same attention weight
 6. Beam Search: keep several best path at each step
 7. Object level v.s. Component level
 
-#Generative Adversarial Network (GANs)
+# Generative Adversarial Network (GANs)
 1. Basic Idea of GAN:
 a generator G is a network. The network defines a probability distribution.
 the loss of discriminator is related to JS divergence.
@@ -77,7 +78,9 @@ c. Connect to GAN
 4. WGAN: 
 Using Earth Mover’s Distance(Wasserstein Distance) to evaluate two distribution
 a. Original version
-
+	W(P_data, P_G)=max{E_x~P_data[D(x)]-E_x~P_g[D(x)]} 
+		for D belongs to 1-Lipschitz
+	Lipschitz Function: |||
 b. Improved version
 
 
